@@ -1,0 +1,29 @@
+version: '3'
+services:
+  piflow-vue:
+    container_name: "piflow-vue"
+    image: piflow-vue
+    restart: always
+    ports:
+      - 6001:80
+  piflow-web:
+    container_name: "piflow-web"
+    image: pillow-web-end
+    restart: always
+    ports:
+      - 6002:6002
+    environment:
+      Interface: 10.224.56.85
+      Host: mysql
+  mysql:
+    container_name: "mysql"
+    image: mysql:5.7
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d/
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+    
