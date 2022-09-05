@@ -1,5 +1,5 @@
 # OSPP-piflow-docker
-Split the piflow project into several different images.
+Split the piflow project into several different docker images.
 
 piflow-web
 
