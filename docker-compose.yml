@@ -8,7 +8,7 @@ services:
       - 6001:80
   piflow-web:
     container_name: "piflow-web"
-    image: hausen1012/pillow-web
+    image: niuzj/piflow-web:1.0
     restart: always
     ports:
       - 6002:6002
