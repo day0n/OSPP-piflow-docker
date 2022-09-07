@@ -5,6 +5,7 @@ services:
   spark-master:
     container_name: "cluster-apache-spark"
     build: ./docker-spark-cluster/
+    restart: always
     ports:
       - "9090:8080"
       - "7077:7077"
@@ -21,12 +22,12 @@ services:
       - 6001:80
   piflow-web:
     container_name: "piflow-web"
-    build: ./piflow-web/
+    image: niuzj/piflow-web:1.0
     restart: always
     ports:
       - 6002:6002
     environment:
-      Interface: 10.224.56.85
+      Interface: piflow-server
       Host: mysql
   mysql:
     container_name: "mysql"
