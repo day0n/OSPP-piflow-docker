@@ -30,6 +30,5 @@ ADD ./lib/hdfs-site.xml /opt/hadoop-2.6.0/etc/hadoop
 RUN mkdir /opt/piflow-server
 COPY ./piflow-server  /opt/piflow-server
 
-RUN  ./opt/piflow-server/start.sh
 
 
