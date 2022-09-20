@@ -11,6 +11,7 @@ cd /opt/spark/bin && ./spark-class org.apache.spark.deploy.master.Master --ip $S
 
 fi
 
+
 #集群配置,需要再docker-compose文件中加入其他两个节点的配置 
 # elif [ "$SPARK_WORKLOAD" == "worker" ];
 # then
